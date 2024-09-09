@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahyu Hamdani</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section id="home">
+            <nav id="navbar">
+                <div class="nav-title">
+                    &lt;WAHYU_H./&gt;
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#!" onClick="document.getElementById('home').scrollIntoView({ behavior: 'smooth', block: 'center' });">&lt;home/&gt;</a></li>
+                    <li><a href="#!" onClick="document.getElementById('about-me').scrollIntoView({ behavior: 'smooth', block: 'center' });">&lt;about_me/&gt;</a></li>
+                    <li><a href="#!" onClick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });">&lt;contact/&gt;</a></li>
+                </ul>
+            </nav>
+            <div class="introduction">
+                <h1><code>&lt;h1&gt;</code><span class="index-intro">Hi,</span> I'm a Web Developer<code>&lt;/h1&gt;</code></h1>
+                <p><code>wahyuh.@desktop~$</code> <q>Two percent is genius and ninety-eight percent. is hard work.</q> — Thomas A. Edison</p>
+            </div>
+        </section>
+        <section id="about-me">
+            
+        </section>
+        <section id="contact">
+    
+        </section>
+    </main>
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+            if(window.pageYOffset > sticky){
+                navbar.classList.add("sticky")
+            }else{
+                navbar.classList.remove("sticky");
+            }
+        } 
+    </script>
+</body>
+</html>
