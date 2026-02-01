@@ -1,112 +1,544 @@
-* {
-    margin: 0;
-    padding: 0;
-    
-    font-family: 'Inter', sans-serif;
+/* =====================
+   CSS RESET & VARIABLES
+===================== */
+:root {
+  --color-primary: #05445E;
+  --color-secondary: #D4F1F4;
+  --color-accent: #75E6DA;
+  --color-dark: #000000;
+  --color-white: #FFFFFF;
+
+  --navbar-height: 100px;
+  --navbar-height-sticky: 65px;
 }
 
-main{
-    position: relative;
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    box-sizing: border-box;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-section{
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;  
-    box-sizing: border-box;
+body {
+  font-family: 'Inter', sans-serif;
 }
 
-section#home{
-    background-color: #05445E;
-    color: #D4F1F4;
+i[class^="ri-"],
+i[class*=" ri-"] {
+  font-family: 'remixicon' !important;
+  font-style: normal;
 }
 
-section#about-me{
-    background-color: #D4F1F4;
-    color: #05445E;
+
+/* =====================
+   LAYOUT
+===================== */
+main {
+  width: 100%;
 }
 
-section#contact{
-    background-color: #000000;
-    color: #FFFFFF;
+section {
+  width: 100%;
 }
 
-nav{
-    overflow: hidden;
-    display: flex;
-    width: 100%;
-    height: 100px;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 30px;
-    box-sizing: border-box;
-    transition: position 3s ease-in-out;
+/* hanya hero */
+#home {
+  min-height: 100vh;
+}
+
+/* =====================
+   SECTIONS
+===================== */
+#home {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+#about-me {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+#contact {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+/* =====================
+   NAVBAR
+===================== */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--navbar-height);
+  padding: 30px;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
 nav.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 65px;
-    background: rgba(20, 20, 94, .6);
-    padding: 10px 30px;
+  position: fixed;
+  top: 0;
+  height: var(--navbar-height-sticky);
+  padding: 10px 30px;
+  background: rgba(20, 20, 94, 0.6);
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+.nav-title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* =====================
+   NAV LIST
+===================== */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--color-accent);
+}
+
+/* =====================
+   INTRODUCTION
+===================== */
+.introduction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+}
+
+.introduction h1 {
+  font-size: 2.2rem;
+}
+
+.introduction p {
+  font-size: 1.3rem;
+}
+
+.index-intro {
+  color: var(--color-accent);
+}
+
+/* =====================
+   ABOUT ME
+===================== */
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  padding: 80px;
+  align-items: flex-start;
+}
+
+.about-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-avatar {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-primary)
+  );
+
+  padding: 4px; /* ring effect */
+}
+
+.about-avatar::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22c55e; /* online */
+
+  border: 2px solid var(--color-secondary);
+}
+
+
+.about-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #000; /* fallback */
+}
+
+.about-profile h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.about-profile p {
+  font-size: 0.9rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.about-intro {
+  position: relative;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 24px 28px;
+  border-radius: 18px;
+  max-width: 720px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about-intro::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 32px;
+
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid var(--color-primary);
+}
+
+.about-intro h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.about-intro p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.about-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.skill-group h4 {
+  margin-bottom: 10px;
+}
+
+.skill-group ul {
+  list-style: none;
+}
+
+.skill-group li {
+  margin-bottom: 6px;
+}
+
+/* =====================
+   CONTACT
+===================== */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px;
+}
+
+.contact-info h2 {
+  margin-bottom: 20px;
+}
+
+.contact-info ul {
+  list-style: none;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+}
+
+.contact-qr {
+  text-align: center;
+}
+
+.whatsapp-qr {
+  width: 200px;
+  height: 200px;
+  margin-top: 16px;
+  padding: 12px;
+
+  background: #fff;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+#contact p {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* =====================
+   CONTACT ICONS
+===================== */
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+}
+
+.contact-list i {
+  font-size: 1.3rem;
+  color: var(--color-accent);
+}
+
+.contact-list li:hover i {
+  transform: scale(1.15);
+  transition: transform 0.2s ease;
+}
+
+.contact-qr i {
+  font-size: 1.2rem;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* =====================
+   HAMBURGER
+===================== */
+.hamburger {
+  display: none;
+  position: relative;
+  width: 32px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  position: absolute;
+  left: 10px;
+  height: 3px;
+  width: 22px;
+  background: var(--color-secondary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(2) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(3) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(4) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.hamburger span:nth-child(2) { top: 0; }
+.hamburger span:nth-child(3) { top: 9px; }
+.hamburger span:nth-child(4) { top: 18px; }
+
+/* DOT */
+.hamburger .dot {
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-secondary);
+  transition: background 0.3s ease, transform 0.3s ease;
+  border-radius: 50%;
+}
+
+/* ACTIVE STATE */
+.hamburger.active .dot {
+  background: var(--color-accent);
+  transform: scale(1.2);
+}
+
+
+/* =====================
+   MOBILE MENU
+===================== */
+.mobile-menu {
+  position: fixed;
+  top: var(--navbar-height-sticky);
+  right: 20px;
+  background: rgba(5, 68, 94, 0.95);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.25s ease;
+}
+
+.mobile-menu a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mobile-menu a:hover {
+  color: var(--color-accent);
+}
+
+/* ACTIVE */
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+
+  nav {
+    padding: 20px;
+  }
+
+  .nav-title {
+    font-size: 1.5rem;
+  }
+
+  .nav-list {
+    gap: 12px;
+  }
+
+  .introduction h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .introduction p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  /* ABOUT */
+  .about-container {
+    grid-template-columns: 1fr;
+    padding: 60px 30px;
+  }
+
+  .about-skills {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-intro::before {
+    display: none; /* hide chat tail */
+  }
+
+  /* CONTACT */
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 30px;
     align-items: center;
-    z-index: 1;
+    text-align: center;
+  }
 }
 
-nav .nav-title{
-    display: inline-block;
-    font-size: 2em;
-    font-weight: 800;
-}
+/* Mobile */
+@media (max-width: 480px) {
 
-nav .nav-list{
-    display: inline-block;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.nav-list li{
-    margin: 0 10px;
-}
-
-.nav-list li a{
-    display: block;
-    text-decoration: none;
-    color: #D4F1F4;
-    font-weight: 600;
-}
-
-.nav-list li a:hover, .nav-list li a:focus{
-    color: #75E6DA;
-}
-
-.introduction{
-    position: absolute;
-    display: block;
-    width: fit-content;
+  nav {
     height: auto;
-    transform: translate(-50%, 0);
-    top: 50%;
-    left: 50%;
+    padding: 16px;
+  }
+
+  .nav-list {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .introduction {
+    width: 90%;
+  }
+
+  .introduction h1 {
+    font-size: 1.4rem;
+  }
+
+  .introduction p {
+    font-size: 0.95rem;
+  }
+
+  /* ABOUT */
+  .about-avatar {
+    width: 110px;
+    height: 110px;
+  }
+
+  .about-intro {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .about-intro h2 {
+    font-size: 0.95rem;
+  }
+
+  .about-intro p {
+    font-size: 0.9rem;
+  }
+
+  /* CONTACT */
+  .whatsapp-qr {
+    width: 180px;
+    height: 180px;
+  }
 }
 
-.introduction h1{
-    font-size: 2.2em;
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 
-.introduction p{
-    font-size: 1.3em;
-}
 
-.index-intro{
-    color: #75E6DA;
-}

@@ -1,53 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wahyu Hamdani</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" type="image/x-icon" href="image/favicon.ico" />
+  <title>Wahyu Hamdani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <main>
-        <section id="home">
-            <nav id="navbar">
-                <div class="nav-title">
-                    &lt;WAHYU_H./&gt;
-                </div>
-                <ul class="nav-list">
-                    <li><a href="#!" onClick="document.getElementById('home').scrollIntoView({ behavior: 'smooth', block: 'center' });">&lt;home/&gt;</a></li>
-                    <li><a href="#!" onClick="document.getElementById('about-me').scrollIntoView({ behavior: 'smooth', block: 'center' });">&lt;about_me/&gt;</a></li>
-                    <li><a href="#!" onClick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });">&lt;contact/&gt;</a></li>
-                </ul>
-            </nav>
-            <div class="introduction">
-                <h1><code>&lt;h1&gt;</code><span class="index-intro">Hi,</span> I'm a Web Developer<code>&lt;/h1&gt;</code></h1>
-                <p><code>wahyuh.@desktop~$</code> <q>Two percent is genius and ninety-eight percent. is hard work.</q> — Thomas A. Edison</p>
+
+<main>
+  <section id="home">
+    <nav id="navbar">
+      <div class="nav-title">&lt;WAHYU_H./&gt;</div>
+
+      <ul class="nav-list">
+        <li><a href="#" data-target="home">&lt;home/&gt;</a></li>
+        <li><a href="#" data-target="about-me">&lt;about_me/&gt;</a></li>
+        <li><a href="#" data-target="contact">&lt;contact/&gt;</a></li>
+      </ul>
+
+        <div class="hamburger" id="hamburger">
+            <span class="dot"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">&lt;home/&gt;</a>
+        <a href="#about-me">&lt;about_me/&gt;</a>
+        <a href="#contact">&lt;contact/&gt;</a>
+    </div>
+
+
+    <div class="introduction">
+      <h1>
+        <code>&lt;h1&gt;</code>
+        <span class="index-intro">Hi,</span> I'm a Web Developer
+        <code>&lt;/h1&gt;</code>
+      </h1>
+
+      <p>
+        <code>wahyuh.@desktop~$</code>
+        <q>Two percent is genius and ninety-eight percent is hard work.</q>
+        — Thomas A. Edison
+      </p>
+    </div>
+  </section>
+  <section id="about-me">
+    <div class="about-container">
+
+        <div class="about-profile">
+        <div class="about-avatar">
+            <img src="image/299x247_test.jpg" alt="Wahyu Hamdani">
+        </div>
+        <h3>Web Developer</h3>
+        <p>
+            At WaveGame<br>
+            Surabaya, Indonesia
+        </p>
+        </div>
+
+        <div class="about-content">
+        <div class="about-intro chat-bubble">
+            <h2>Introduction</h2>
+            <p>
+                Hello, I'm Wahyu. Professional Web Developer with 4+ years of experience
+                handling website projects from small to big projects. I believe with my skills,
+                I can create modern and high-performance websites.
+            </p>
+        </div>
+
+
+        <div class="about-skills">
+            <div class="skill-group">
+            <h4>Programming Language</h4>
+            <ul>
+                <li>PHP</li>
+                <li>JavaScript (ES6)</li>
+                <li>CSS</li>
+                <li>Solidity</li>
+            </ul>
+
+            <h4>Runtime & Database</h4>
+            <ul>
+                <li>Node.js</li>
+                <li>Nginx</li>
+                <li>MySQL</li>
+            </ul>
             </div>
-        </section>
-        <section id="about-me">
-            
-        </section>
-        <section id="contact">
-    
-        </section>
-    </main>
-    <script>
-        window.onscroll = function() {
-            myFunction()
-        };
-        var navbar = document.getElementById("navbar");
-        var sticky = navbar.offsetTop;
-        
-        function myFunction() {
-            if(window.pageYOffset > sticky){
-                navbar.classList.add("sticky")
-            }else{
-                navbar.classList.remove("sticky");
-            }
-        } 
-    </script>
+
+            <div class="skill-group">
+            <h4>Framework & Library</h4>
+            <ul>
+                <li>React</li>
+                <li>Laravel</li>
+                <li>Vue</li>
+                <li>Bootstrap</li>
+                <li>jQuery</li>
+                <li>Web3.js</li>
+                <li>Truffle</li>
+            </ul>
+            </div>
+        </div>
+        </div>
+
+    </div>
+   </section>
+    <section id="contact">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Contact</h2>
+            <ul class="contact-list">
+                <li>
+                <i class="ri ri-mail-line"></i>
+                <span>mrhamdani0101@gmail.com</span>
+                </li>
+                <li>
+                <i class="ri ri-github-line"></i>
+                <span>github.com/hamdani0101</span>
+                </li>
+                <li>
+                <i class="ri ri-linkedin-box-line"></i>
+                <span>linkedin.com/in/wahyu-hamdani</span>
+                </li>
+            </ul>
+        </div>
+        <div class="contact-qr">
+            <p>
+                <i class="ri ri-whatsapp-line"></i> WhatsApp
+            </p>
+
+            <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=https://wa.me/6285858691356"
+                class="whatsapp-qr"
+                alt="WhatsApp QR"
+            />
+        </div>
+    </div>
+    <p class="copyright">
+        © 2026 Wahyu Hamdani
+    </p>
+    </section>
+</main>
+
+<script src="scripts.js"></script>
 </body>
 </html>
