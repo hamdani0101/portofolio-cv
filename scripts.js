@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobileMenu");
 
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", () => {
+    hamburger.addEventListener("click", (e) => {
       mobileMenu.classList.toggle("active");
-      hamburger.classList.toggle("active");
+      e.currentTarget.classList.toggle("active");
     });
   }
 
