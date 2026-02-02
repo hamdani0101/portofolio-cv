@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", handleStickyNavbar);
 
   const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-hamburger.addEventListener("click", (e) => {
-  mobileMenu.classList.toggle("active");
-  e.target.classList.toggle("active");
-});
+  hamburger.addEventListener("click", (e) => {
+    mobileMenu.classList.toggle("active");
+    e.target.classList.toggle("active");
+  });
 
 });
