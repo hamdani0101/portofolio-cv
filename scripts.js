@@ -31,9 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobileMenu");
 
-  hamburger.addEventListener("click", (e) => {
-    mobileMenu.classList.toggle("active");
-    e.target.classList.toggle("active");
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    });
+  }
+
+  mobileMenu.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") {
+      mobileMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+    }
   });
+
 
 });
