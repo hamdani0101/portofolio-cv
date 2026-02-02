@@ -417,6 +417,7 @@ nav.sticky {
   pointer-events: none;
   transform: translateY(-10px);
   transition: all 0.25s ease;
+  z-index: 1;
 }
 
 .mobile-menu a {
