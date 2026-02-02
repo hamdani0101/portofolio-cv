@@ -321,11 +321,12 @@ nav.sticky {
 
 .contact-list a {
     text-decoration: none;
-    color: inherit;
+    color: var(--color-secondary);
 }
 
-.contact-list a:hover {
-    text-decoration: underline;
+.contact-list a:hover, .contact-list a:focus, .contact-list a:active {
+    text-decoration: none;
+    color: var(--color-accent);
 }
 
 .contact-list i {
