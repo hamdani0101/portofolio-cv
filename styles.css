@@ -22,6 +22,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background-color: var(--color-primary);
 }
 
 i[class^="ri-"],
@@ -72,18 +73,23 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--navbar-height);
-  padding: 30px;
-  width: 100%;
+  padding: 10px 30px;
+  margin: 10px auto;
+  height: var(--navbar-height-sticky);
+  width: 90%;
+  background-color: transparent;
+  border-radius: 10px;
+  border: white 1px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 nav.sticky {
   position: fixed;
   top: 0;
-  height: var(--navbar-height-sticky);
+  left: 5%;
   padding: 10px 30px;
-  background: rgba(20, 20, 94, 0.6);
+  /* background: rgba(20, 20, 94, 0.6); */
   z-index: 10;
   backdrop-filter: blur(6px);
 }
@@ -91,6 +97,7 @@ nav.sticky {
 .nav-title {
   font-size: 2rem;
   font-weight: 800;
+  color: var(--color-secondary);
 }
 
 /* =====================
@@ -109,9 +116,35 @@ nav.sticky {
   transition: color 0.2s ease;
 }
 
-.nav-list a:hover,
-.nav-list a:focus {
+.nav-list a.active {
+  position: relative;
   color: var(--color-accent);
+}
+
+/* dot under active nav link */
+.nav-list a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 10px;
+  border-radius: 50%;
+  height: 10px;
+  background-color: var(--color-accent);
+}
+
+nav .lets-talk {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+nav .lets-talk:hover {
+  background-color: var(--color-accent-hover);
 }
 
 /* =====================
