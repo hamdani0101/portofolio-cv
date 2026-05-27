@@ -1,49 +1,80 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
   const navLinks = document.querySelectorAll("[data-target]");
-  const stickyOffset = navbar.offsetTop;
+  const menuLinks = document.querySelectorAll(".mobile-menu a");
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const sections = document.querySelectorAll("main section[id], main article[id]");
+  const stickyOffset = navbar ? navbar.offsetTop : 0;
 
-  // Smooth scroll
-  navLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.dataset.target;
-      const targetEl = document.getElementById(targetId);
+  const scrollToSection = (targetId) => {
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
 
-      targetEl.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
+    const offset = navbar ? navbar.offsetHeight + 36 : 0;
+    const top = targetEl.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
+  };
+
+  const closeMobileMenu = () => {
+    if (!hamburger || !mobileMenu) return;
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+  };
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      scrollToSection(link.dataset.target);
+      closeMobileMenu();
     });
   });
 
-  // Sticky navbar
-  const handleStickyNavbar = () => {
-    if (window.scrollY > stickyOffset) {
-      navbar.classList.add("sticky");
-    } else {
-      navbar.classList.remove("sticky");
-    }
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      scrollToSection(link.getAttribute("href").replace("#", ""));
+      closeMobileMenu();
+    });
+  });
+
+  const updateActiveNav = () => {
+    const scrollPosition = window.scrollY + (navbar ? navbar.offsetHeight + 70 : 100);
+    let currentId = "home";
+
+    sections.forEach((section) => {
+      if (scrollPosition >= section.offsetTop) {
+        currentId = section.id;
+      }
+    });
+
+    document.querySelectorAll(".nav-list a[data-target]").forEach((link) => {
+      link.classList.toggle("active", link.dataset.target === currentId);
+    });
   };
 
-  window.addEventListener("scroll", handleStickyNavbar);
+  const handleStickyNavbar = () => {
+    if (!navbar) return;
+    navbar.classList.toggle("sticky", window.scrollY > stickyOffset);
+    updateActiveNav();
+  };
 
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
+  window.addEventListener("scroll", handleStickyNavbar, { passive: true });
+  handleStickyNavbar();
 
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", (e) => {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
       mobileMenu.classList.toggle("active");
-      e.currentTarget.classList.toggle("active");
     });
   }
 
-  mobileMenu.addEventListener("click", (e) => {
-    if (e.target.tagName === "A") {
-      mobileMenu.classList.remove("active");
-      hamburger.classList.remove("active");
-    }
-  });
-
-  document.getElementById("current-year").textContent = new Date().getFullYear();
+  const currentYear = document.getElementById("current-year");
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
 });
