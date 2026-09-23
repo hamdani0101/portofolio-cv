@@ -21,19 +21,17 @@
         <div class="nav-title">&lt;WAHYU_H./&gt;</div>
 
         <ul class="nav-list">
-            <li><a href="#" data-target="home">Home</a></li>
-            <li><a href="#" data-target="about-me">About Me</a></li>
-            <li><a href="#" data-target="contact">Projects</a></li>
-            <li><a href="#" data-target="contact">Skills</a></li>
-            <li><a href="#" data-target="contact">Contact</a></li>
-
+            <li><a href="#home" data-target="home">Home</a></li>
+            <li><a href="#about-me" data-target="about-me">About Me</a></li>
+            <li><a href="#skills" data-target="skills">Skills</a></li>
+            <!-- <li><a href="#projects" data-target="projects">Projects</a></li> -->
+            <li><a href="#contact" data-target="contact">Contact</a></li>
             <li>
-                <a href="#" class="lets-talk">Let's Talk <i class="ri-arrow-right-fill"></i></a>
+                <a href="#contact" data-target="contact" class="lets-talk">Let's Talk <i class="ri-arrow-right-fill"></i></a>
             </li>
         </ul>
 
         <div class="hamburger" id="hamburger">
-            <span class="dot"></span>
             <span></span>
             <span></span>
             <span></span>
@@ -43,93 +41,171 @@
     <div class="mobile-menu" id="mobileMenu">
         <a href="#home">Home</a>
         <a href="#about-me">About Me</a>
+        <a href="#skills">Skills</a>
+        <!-- <a href="#projects">Projects</a> -->
         <a href="#contact">Contact</a>
     </div>
+
     <main>
         <section id="home">
             <div class="introduction">
-                <h1>
-                    <code>&lt;h1&gt;</code>
-                    <span class="index-intro">I</span> Build Fast, Scalable, and Reliable Web Applications
-                    <code>&lt;/h1&gt;</code>
-                </h1>
-
-                <p>
-                    <code>wahyuh.@desktop~$</code>
-                    <q>4+ years of experience building modern web applications for startups and growing businesses.</q>
-                </p>
+                <p class="greeting">Hi, I'm</p>
+                <h1>Wahyu Hamdani</h1>
+                <h2 class="tagline">Web Developer</h2>
+                <p class="subtitle">5+ years of experience building modern web applications for startups and growing businesses.</p>
+                <div class="hero-actions">
+                    <!-- <a href="#projects" data-target="projects" class="btn-primary">View Projects</a> -->
+                    <a href="#contact" data-target="contact" class="btn-secondary">Get in Touch</a>
+                </div>
             </div>
         </section>
+
         <section id="about-me">
             <div class="about-container">
-
                 <div class="about-profile">
                     <div class="about-avatar">
                         <img src="image/avatar.jpg" alt="Wahyu Hamdani">
                     </div>
                     <h3>Web Developer</h3>
-                    <p>
-                        WaveGame — Surabaya, Indonesia
+                    <p class="location">
+                        <i class="ri-map-pin-line"></i> WaveGame — Surabaya, Indonesia
                     </p>
                 </div>
 
                 <div class="about-content">
-                    <div class="about-intro chat-bubble">
-                        <h2>Hello, I’m Wahyu.</h2>
-                        <p>
-                            A professional Web Developer with 4+ years of experience delivering websites from small
-                            business projects to large-scale applications.
-                            I specialize in building modern, secure, and high-performance web solutions.
-                        </p>
+                    <h2>About Me</h2>
+                    <p>
+                        A professional Web Developer with 5+ years of experience delivering websites from small
+                        business projects to large-scale applications. I specialize in building modern, secure,
+                        and high-performance web solutions.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Experience</span>
+                            <span class="detail-value">5+ Years</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Focus</span>
+                            <span class="detail-value">Full-Stack Web</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Location</span>
+                            <span class="detail-value">Surabaya, ID</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="skills-container">
+                <h2>Skills</h2>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h4>Programming Languages</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">JavaScript (ES6+)</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Solidity</span>
+                        </div>
                     </div>
 
+                    <div class="skill-group">
+                        <h4>Frameworks & Tools</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React / Vue</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">MySQL / PostgreSQL</span>
+                            <span class="skill-tag">Web3.js & Truffle</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">jQuery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="about-skills">
-                        <div class="skill-group">
-                            <h4>Programming Language</h4>
-                            <ul>
-                                <li>PHP (Backend Development)</li>
-                                <li>JavaScript (ES6+)</li>
-                                <li>CSS (Responsive UI)</li>
-                                <li>Solidity (Smart Contracts)</li>
-                            </ul>
+        <!-- <section id="projects">
+            <div class="projects-container">
+                <h2>Projects</h2>
+                <p class="section-subtitle">A selection of my recent work</p>
 
-                            <div class="skill-group">
-                                <h4>Framework & Tools</h4>
-                                <ul>
-                                    <li>React / Vue (Frontend Apps)</li>
-                                    <li>Laravel (REST API & Backend)</li>
-                                    <li>Node.js (Server Runtime)</li>
-                                    <li>Web3.js & Truffle (Blockchain)</li>
-                                    <li>Bootstrap</li>
-                                    <li>jQuery</li>
-                                </ul>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="ri-code-s-slash-line"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack web application with payment integration, admin dashboard, and real-time inventory management.</p>
+                            <div class="project-tags">
+                                <span>Laravel</span>
+                                <span>MySQL</span>
+                                <span>Vue</span>
                             </div>
                         </div>
                     </div>
 
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="ri-links-line"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>DeFi Dashboard</h3>
+                            <p>Decentralized finance dashboard for tracking portfolio, transactions, and smart contract interactions.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Web3.js</span>
+                                <span>Solidity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="ri-smartphone-line"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Company Profile Website</h3>
+                            <p>Responsive corporate website with CMS integration, SEO optimization, and analytics dashboard.</p>
+                            <div class="project-tags">
+                                <span>Node.js</span>
+                                <span>PostgreSQL</span>
+                                <span>TypeScript</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-        </section>
+            </div>
+        </section> -->
+
         <section id="contact">
             <div class="contact-container">
                 <div class="contact-info">
                     <h2>Contact</h2>
-                    <p>Let’s work together — feel free to reach out.</p>
+                    <p>Let's work together — feel free to reach out.</p>
                     <ul class="contact-list">
                         <li>
-                            <i class="ri ri-mail-line"></i>
+                            <i class="ri-mail-line"></i>
                             <a href="mailto:mrhamdani0101@gmail.com">
                                 mrhamdani0101@gmail.com
                             </a>
                         </li>
                         <li>
-                            <i class="ri ri-github-line"></i>
+                            <i class="ri-github-line"></i>
                             <a href="https://github.com/hamdani0101" target="_blank" rel="noopener noreferrer">
                                 github.com/hamdani0101
                             </a>
                         </li>
                         <li>
-                            <i class="ri ri-linkedin-box-line"></i>
+                            <i class="ri-linkedin-box-line"></i>
                             <a href="https://www.linkedin.com/in/wahyu-hamdani-062030369" target="_blank" rel="noopener noreferrer">
                                 linkedin.com/in/wahyu-hamdani
                             </a>
@@ -138,15 +214,14 @@
                 </div>
                 <div class="contact-qr">
                     <p>
-                        <i class="ri ri-whatsapp-line"></i> WhatsApp
+                        <i class="ri-whatsapp-line"></i> WhatsApp
                     </p>
-
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=https://wa.me/6285858691356"
                         class="whatsapp-qr" alt="WhatsApp QR" />
                 </div>
             </div>
             <p class="copyright">
-                © <span id="current-year"></span> Wahyu Hamdani
+                &copy; <span id="current-year"></span> Wahyu Hamdani
             </p>
         </section>
     </main>
