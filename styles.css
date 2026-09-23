@@ -1,6 +1,3 @@
-/* =====================
-   CSS RESET & VARIABLES
-===================== */
 :root {
   --color-primary: #05445E;
   --color-secondary: #D4F1F4;
@@ -17,9 +14,13 @@
 *,
 *::before,
 *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html {
@@ -36,7 +37,7 @@ body {
 
 i[class^="ri-"],
 i[class*=" ri-"] {
-  font-family: 'remixicon' !important;
+  font-family: "remixicon" !important;
   font-style: normal;
 }
 
@@ -95,6 +96,8 @@ section {
    NAVBAR
 ===================== */
 nav {
+  position: sticky;
+  top: 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -129,11 +132,7 @@ nav.sticky {
   white-space: nowrap;
 }
 
-/* =====================
-   NAV LIST
-===================== */
 .nav-list {
-  list-style: none;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -156,7 +155,7 @@ nav.sticky {
 }
 
 .nav-list a.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 50%;
@@ -766,13 +765,37 @@ nav .lets-talk.active::after {
     gap: 20px;
   }
 
-  /* CONTACT */
-  .contact-container {
-    flex-direction: column;
-    gap: 40px;
-    padding: 60px 30px;
-    align-items: center;
-    text-align: center;
+  .blob {
+    left: 50%;
+    right: auto;
+    transform: translateX(-28%);
+  }
+
+  .orbit {
+    left: 50%;
+    transform: translateX(-58%) rotate(-28deg);
+  }
+
+  .dots {
+    right: 13%;
+  }
+
+  .code-badge {
+    left: calc(50% + 120px);
+    right: auto;
+  }
+
+  .stats-panel,
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stack-card {
+    padding-top: 0;
+  }
+
+  .contact-qr {
+    justify-self: start;
   }
 
   .contact-info ul {
