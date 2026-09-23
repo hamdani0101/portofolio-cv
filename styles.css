@@ -126,6 +126,10 @@ nav.sticky {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+nav li {
+  list-style: none;
+}
+
 .nav-title {
   font-size: 1.5rem;
   font-weight: 800;
